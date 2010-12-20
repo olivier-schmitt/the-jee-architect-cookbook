@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://yellowbook.jws.cookbook.architect.jee/" xmlns:tns="http://yellowbook.jws.cookbook.architect.jee/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getPhoneNumber" type="tns:getPhoneNumber"/>
+
+  <xs:element name="getPhoneNumberResponse" type="tns:getPhoneNumberResponse"/>
+
+  <xs:complexType name="getPhoneNumber">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPhoneNumberResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

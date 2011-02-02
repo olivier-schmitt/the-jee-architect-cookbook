@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<faces-config version="2.0" 
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
+    <managed-bean>
+        <managed-bean-name>loginBackingBean</managed-bean-name>
+        <managed-bean-class>jee.architect.cookbook.LoginBackingBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+ 
+  <!-- navigation rules for index.jspx -->
+    <navigation-rule>
+        <from-view-id>/index.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/page2.jspx</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+	
+  <!-- navigation rules for page2.jspx -->
+    <navigation-rule>
+        <from-view-id>/page2.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/index.jspx</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>

@@ -1,0 +1,49 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>jee.architect.cookbook.glassfish</groupId>
+    <artifactId>jms-client-test</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>jms-client-test</name>
+    <url>http://maven.apache.org</url>
+
+    <repositories>
+        <repository>
+            <id>java.net.general</id>
+            <name>Java.net Repository for Maven 2</name>
+            <url>http://download.java.net/maven/2
+            </url>
+            <layout>default</layout>
+        </repository>
+
+        <repository>
+            <id>java.net.glassfish</id>
+            <name>GlassFish Maven Repository</name>
+            <url>http://download.java.net/maven/glassfish
+            </url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.jms</groupId>
+            <artifactId>jms-api</artifactId>
+            <version>1.1-rev-1</version>
+        </dependency>
+        <dependency>
+            <groupId>jee.architect.cookbook.glassfish</groupId>
+            <artifactId>jms-client-deps</artifactId>
+            <version>1.0</version>
+            <type>pom</type>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>

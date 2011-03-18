@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:mobile="http://java.sun.com/jsf/composite/mobile">
+<h:head>
+	<link rel="stylesheet"
+		href="resources/mobile/css/jquery.mobile-1.0a3.min.css" />
+	<script src="resources/common/js/jquery-1.5.js" />
+	<script src="resources/mobile/js/jquery.mobile-1.0a3.min.js" />
+</h:head>
+<h:body>
+	<div data-role="page">
+		<div data-role="header" data-theme="b">
+			<h1>Hello World !</h1>
+		</div>
+		<div data-role="content">
+			<p>Buy my fruits !</p>			
+			<mobile:list model="#{helloListCtrl.model}"/>
+		</div>
+	</div>
+</h:body>
+</html>

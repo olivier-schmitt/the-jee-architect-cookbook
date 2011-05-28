@@ -1,0 +1,69 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+    Get the corporate pom :https://github.com/olivier-schmitt/the-jee-architect-cookbook/blob/master/corporate/pom.xml
+    -->
+    <parent>
+        <groupId>jee.architect.cookbook</groupId>
+        <artifactId>corporate-pom</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>jee.architect.cookbook.misc.tomcat</groupId>
+    <artifactId>security-valve</artifactId>
+    <packaging>jar</packaging>
+
+    <version>1.0-SNAPSHOT</version>
+    <name>security-valve</name>
+
+    <url>https://github.com/olivier-schmitt/the-jee-architect-cookbook/blob/master/misc/tomcat/security-valve</url>
+
+
+    <properties>
+        <catalina.version>5.5.23</catalina.version>
+        <servlet.version>2.4</servlet.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>tomcat</groupId>
+            <artifactId>catalina</artifactId>
+            <version>${catalina.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+</project>

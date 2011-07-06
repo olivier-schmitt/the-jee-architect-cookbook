@@ -1,0 +1,15 @@
+<html>
+    <head>        
+        <script>            
+            function retry(){                
+                document.location.href='URL';
+            }                        
+            window.setTimeout(retry, TIMEOUT);            
+        </script>
+    </head>
+    <body>
+        <br/><br/><br/>
+        <div><h2>Too much users, your service is temporarily out of order.</h2></div>
+        <div>Please wait <span id="timeout">T_SECONDS</span> seconds before trying again (auto retry).</div>
+    </body>
+</html>

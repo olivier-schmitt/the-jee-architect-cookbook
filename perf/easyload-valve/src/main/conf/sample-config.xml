@@ -1,0 +1,57 @@
+
+<Server port="8006" shutdown="SHUTDOWN">
+
+    <Listener className="fr.gouv.agriculture.o2.tomcat.mx.JMXAdaptorLifecycleListener"
+          namingPort="8083" port="8084" host="127.0.0.1" />  
+
+    <Listener className="org.apache.catalina.core.AprLifecycleListener" />
+    <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
+    <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+    <Listener className="org.apache.catalina.storeconfig.StoreConfigLifecycleListener"/>
+
+    <GlobalNamingResources>
+
+        <Environment name="simpleValue" type="java.lang.Integer" value="30"/>
+
+        <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+       description="User database that can be updated and saved"
+           factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+          pathname="conf/tomcat-users.xml" />
+
+    </GlobalNamingResources>
+
+    <Service name="Catalina">
+
+ 
+        <Connector port="8080" maxHttpHeaderSize="8192"
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false" redirectPort="8445" acceptCount="100"
+               connectionTimeout="20000" disableUploadTimeout="true" 
+               />
+
+        <Engine name="Catalina" defaultHost="localhost">
+    
+            <Valve 
+                className="jee.architect.cookbook.perf.tomcat.easyload.EasyLoadValve"
+                maxLoadAvg="1000"
+                timeout="15000"/>
+                
+            <Valve className="fr.gouv.agriculture.o2.tomcat.valve.SecurityValve"/>
+
+
+            <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+             resourceName="UserDatabase"/>
+
+            <Host name="localhost" appBase="webapps"
+       unpackWARs="true" autoDeploy="true"
+       xmlValidation="false" xmlNamespaceAware="false">
+           
+           
+            </Host>
+
+        </Engine>
+
+    </Service>
+
+</Server>

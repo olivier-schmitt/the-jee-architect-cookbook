@@ -1,0 +1,31 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <h:head>
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" /> 
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
+        <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
+    </h:head>
+    <h:body>
+        <div data-role="page">
+            <div data-role="header" data-theme="b">
+                <ui:insert name="header">
+                    <h1>Insert your header.</h1>
+                </ui:insert>
+            </div>
+            <div data-role="content">		
+                <ui:insert name="content">
+                    Insert your content.
+                </ui:insert>
+            </div>
+        </div>
+    </h:body>
+</html>

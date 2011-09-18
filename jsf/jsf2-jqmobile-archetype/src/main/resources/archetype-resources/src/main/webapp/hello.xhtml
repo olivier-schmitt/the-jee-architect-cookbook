@@ -1,0 +1,27 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+    </h:head>
+    <h:body>
+        <ui:composition template="/layout/master.xhtml">
+            <ui:define name="header">
+                <h1>Welcome to my fruit shop !</h1>
+            </ui:define>
+            <ui:define name="content">
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="fruit.xhtml">Apples</a></li>
+                    <li><a href="fruit.xhtml">Kiwis</a></li>
+                    <li><a href="fruit.xhtml">Mangos</a></li>
+                    <li><a href="fruit.xhtml">Peaches</a></li>
+                </ul>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

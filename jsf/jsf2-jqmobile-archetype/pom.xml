@@ -8,13 +8,29 @@
     <packaging>maven-archetype</packaging>
 
     <name>JSF JQuery Mobile Archetype</name>
-  
+    
+    <url>http://blog.thejeearchitectcookbook.net/</url>
+    
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
     <scm>
         <connection>scm:git:git@github.com:olivier-schmitt/the-jee-architect-cookbook.git</connection>
         <url>scm:git:git@github.com:olivier-schmitt/the-jee-architect-cookbook.git</url>
         <developerConnection>scm:git:git@github.com:olivier-schmitt/the-jee-architect-cookbook.git</developerConnection>
     </scm>
-
+    <developers>
+        <developer>
+            <id>os</id>
+            <name>Olivier SCHMITT</name>
+            <email>jeearchitectcookbook@free.fr</email>
+        </developer>
+    </developers>
     <build>
         <extensions>
             <extension>
@@ -38,4 +54,5 @@
             </plugins>
         </pluginManagement>
     </build>
+    
 </project>

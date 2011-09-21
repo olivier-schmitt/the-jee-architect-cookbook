@@ -4,7 +4,7 @@
 
     <groupId>jee.architect.cookbook</groupId>
     <artifactId>jsf-jqmobile-archetype</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>JSF JQuery Mobile Archetype</name>

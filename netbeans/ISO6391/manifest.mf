@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: jee.architect.cookbook.netbeans.iso6391
+OpenIDE-Module-Localizing-Bundle: jee/architect/cookbook/netbeans/iso6391/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

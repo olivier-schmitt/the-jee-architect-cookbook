@@ -10,7 +10,7 @@
   
     <groupId>net.thejeearchitectcookbook</groupId>
     <artifactId>jsf-jqmobile-archetype</artifactId>
-    <version>1.6</version>
+    <version>1.7-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>JSF JQuery Mobile Archetype</name>

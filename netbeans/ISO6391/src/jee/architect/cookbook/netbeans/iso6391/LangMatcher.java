@@ -1,14 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package jee.architect.cookbook.netbeans.iso6391;
 
 import java.util.Scanner;
 import java.util.regex.MatchResult;
 
 /**
- *
+ * <p>Classe utilitaire pour extraire l'attribut lang.</p>
+ * 
  * @author oschmitt
  */
 public final class LangMatcher {
@@ -25,7 +23,7 @@ public final class LangMatcher {
     }
     
     
-    public static String getValue(String line, int caret) {
+    public static LangAttribute getValue(String line, int caret) {
 
         Scanner scanner = new Scanner(line);
         while (true) {
@@ -39,7 +37,11 @@ public final class LangMatcher {
                     int end = matchResult.end(2);
                     if ((caret >= start)
                             && (caret <= end)) {
-                        return value;
+                        LangAttribute langAttribute = new LangAttribute();
+                        langAttribute.setStart(start);
+                        langAttribute.setEnd(end);
+                        langAttribute.setValue(value);
+                        return langAttribute;
                     }
                 }
             } catch (IllegalStateException ise) {

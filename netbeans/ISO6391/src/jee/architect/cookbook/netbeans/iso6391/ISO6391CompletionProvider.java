@@ -20,7 +20,14 @@ import org.openide.text.NbDocument;
 import org.openide.util.Exceptions;
 
 /**
- *
+ * <p>
+ * Fourni la complétion pour l'attribut lang.
+ * </p>
+ * 
+ * <p>
+ * Les codes sont issus de la norme ISO639-1 et sont stockés dans un fichier CSV.
+ * </p>
+ * 
  * @author oschmitt
  */
 @MimeRegistration(mimeType = "text/xhtml", service = CompletionProvider.class)
@@ -28,6 +35,9 @@ public class ISO6391CompletionProvider implements CompletionProvider {
 
     private static Set<String> codes = new TreeSet<String>();
 
+    /*
+     * Chargement des codes au chargement de la classe
+     */
     static {
         try {
             loadISO3691Codes();
@@ -60,20 +70,29 @@ public class ISO6391CompletionProvider implements CompletionProvider {
         int endOffset = lineElement.getEndOffset();
         String lineOfText = text.substring(startOffset, endOffset);
         int column = NbDocument.findLineColumn(styledDocument, position);
+
         if (LangMatcher.containsRef(lineOfText)) {
-            final String value = LangMatcher.getValue(lineOfText, column);
-            return new AsyncCompletionTask(new AsyncCompletionQuery() {
-                @Override
-                protected void query(CompletionResultSet completionResultSet,
-                        Document document, int caretOffset) {
-                    for (String code : ISO6391CompletionProvider.codes) {
-                        if (code.startsWith(value)) {
-                            completionResultSet.addItem(new ISO6391CompletionItem(code));
+
+            final LangAttribute langAttribute = LangMatcher.getValue(lineOfText, column);
+            if (langAttribute == null) {
+                return null;
+            } else {
+                langAttribute.setLineOffset(startOffset);
+                return new AsyncCompletionTask(new AsyncCompletionQuery() {
+                    @Override
+                    protected void query(CompletionResultSet completionResultSet,
+                            Document document, int caretOffset) {
+
+                        for (String code : ISO6391CompletionProvider.codes) {
+                            if (code.startsWith(langAttribute.getValue())) {
+                                completionResultSet.addItem(new ISO6391CompletionItem(langAttribute, code));
+                            }
                         }
+                        completionResultSet.finish();
                     }
-                    completionResultSet.finish();
-                }
-            });
+                });
+            }
+
         } else {
             return null;
         }

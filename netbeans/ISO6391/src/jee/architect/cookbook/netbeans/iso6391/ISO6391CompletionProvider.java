@@ -96,7 +96,6 @@ public class ISO6391CompletionProvider implements CompletionProvider {
         } else {
             return null;
         }
-
     }
 
     @Override

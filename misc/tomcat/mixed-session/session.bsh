@@ -1,0 +1,49 @@
+if (ResponseCode != null && ResponseCode.equals ("200") == false  ) 
+{
+
+	Failure= false ;
+}
+else 
+{
+	if (ResponseCode != null && ResponseCode.equals ("200") == true ) 
+	{
+
+		if(SamplerData.contains("[no cookies]"))
+		{
+			Failure= false ;
+		}
+		else
+		{
+			int startOffset = SamplerData.indexOf("JSESSIONID=") + "JSESSIONID=".length();
+
+		
+			int endOffset =  SamplerData.indexOf("\\r",startOffset);
+
+			String sessionRequest = SamplerData.substring(startOffset);
+		
+
+			startOffset = ResponseHeaders.indexOf("Set-Cookie: JSESSIONID=") + "Set-Cookie: JSESSIONID=".length();
+			endOffset =  ResponseHeaders.indexOf(";",startOffset);
+
+			String sessionResponse = ResponseHeaders.substring(startOffset,endOffset);
+		
+			if(sessionRequest.contains(sessionResponse))
+			{
+				log.info("OK " + sessionResponse);
+				Failure= false ;
+			}
+			else 
+			{
+				log.info( "MIXING :  " + sessionRequest + "!=" + sessionResponse);
+				Failure= true ;
+			}
+		}	
+
+	}   	
+	else 
+	{
+		Failure= false ;
+	}
+	
+}
+
